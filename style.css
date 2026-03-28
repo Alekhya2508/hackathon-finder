@@ -1,0 +1,485 @@
+/* ========================================
+   HACKATHON FINDER - STYLESHEET
+   Beginner-friendly CSS with comments
+======================================== */
+
+/* ========== RESET & BASE STYLES ========== */
+/* Remove default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base font and background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Gradient background - goes from purple to blue */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* ========== HEADER STYLES ========== */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    /* Text shadow makes it pop */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========== SEARCH SECTION STYLES ========== */
+.search-section {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Search box styling */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+    padding: 15px 25px;
+    /* Box shadow for depth */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.search-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+/* Search input field */
+#searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    background: transparent;
+}
+
+#searchInput::placeholder {
+    color: #999;
+}
+
+/* Filter buttons container */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Individual filter button */
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for filter buttons */
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Active filter button */
+.filter-btn.active {
+    background: white;
+    color: #764ba2;
+    font-weight: bold;
+}
+
+/* ========== STATS SECTION STYLES ========== */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    /* Blur effect for modern look */
+    backdrop-filter: blur(10px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ========== MAIN CONTENT STYLES ========== */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* Cards grid container */
+.cards-container {
+    display: grid;
+    /* Responsive grid - auto-fit cards */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* ========== HACKATHON CARD STYLES ========== */
+.hackathon-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Card hover effect - lifts up */
+.hackathon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Card header with gradient */
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+/* Favorite button (star icon) */
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* When favorited */
+.favorite-btn.active {
+    background: #ffd700;
+    color: #333;
+}
+
+/* Hackathon name */
+.hackathon-name {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    padding-right: 50px; /* Space for favorite button */
+}
+
+/* Event mode badge (Online/Offline) */
+.event-mode {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+
+/* Card body content */
+.card-body {
+    padding: 20px;
+}
+
+/* Info items (college, location, date) */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.info-icon {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    width: 25px;
+    text-align: center;
+}
+
+.info-text {
+    font-size: 0.95rem;
+}
+
+/* Countdown timer */
+.countdown {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.countdown-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.countdown-item {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-number {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #764ba2;
+}
+
+.countdown-unit {
+    font-size: 0.7rem;
+    color: #999;
+    text-transform: uppercase;
+}
+
+/* Event ended message */
+.event-ended {
+    background: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Card footer with register button */
+.card-footer {
+    padding: 0 20px 20px;
+}
+
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.register-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* ========== NO RESULTS MESSAGE ========== */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    display: none; /* Hidden by default */
+}
+
+.no-results.show {
+    display: block;
+}
+
+.no-results-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.no-results h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* ========== FOOTER STYLES ========== */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: white;
+    opacity: 0.8;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .stat-card {
+        padding: 15px 25px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .filter-buttons {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        width: 100%;
+    }
+    
+    .stats-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-card {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* ========== ANIMATIONS ========== */
+/* Fade in animation for cards */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hackathon-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    padding: 8px 18px;
+    background: white;
+    color: #764ba2;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #eee;
+}
+/* ===== LOGOUT BUTTON (TOP RIGHT) ===== */
+.header {
+    position: relative; /* important for positioning */
+}
+
+/* Logout button styling */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* 🔥 curved edges */
+
+    background: white;
+    color: #764ba2;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.logout-btn:hover {
+    background: #ffd700;
+    color: #333;
+    transform: scale(1.05);
+}
+/* Stagger animation delay for cards */
+.hackathon-card:nth-child(1) { animation-delay: 0.1s; }
+.hackathon-card:nth-child(2) { animation-delay: 0.2s; }
+.hackathon-card:nth-child(3) { animation-delay: 0.3s; }
+.hackathon-card:nth-child(4) { animation-delay: 0.4s; }
+.hackathon-card:nth-child(5) { animation-delay: 0.5s; }
+.hackathon-card:nth-child(6) { animation-delay: 0.6s; }
