@@ -426,6 +426,37 @@ body {
 .hackathon-card {
     animation: fadeIn 0.5s ease forwards;
 }
+/* ===== LOGOUT BUTTON (TOP RIGHT) ===== */
+.header {
+    position: relative; /* important for positioning */
+}
+
+/* Logout button styling */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* 🔥 curved edges */
+
+    background: white;
+    color: #764ba2;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.logout-btn:hover {
+    background: #ffd700;
+    color: #333;
+    transform: scale(1.05);
+}
 
 /* Stagger animation delay for cards */
 .hackathon-card:nth-child(1) { animation-delay: 0.1s; }
